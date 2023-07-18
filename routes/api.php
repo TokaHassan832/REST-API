@@ -22,8 +22,13 @@ Route::get('/products/{id}',[\App\Http\Controllers\ProductController::class,'sho
 Route::get('/products/search/{name}',[\App\Http\Controllers\ProductController::class,'search']);
 
 
+//categories
 Route::get('/categories',[\App\Http\Controllers\CategoryController::class,'index']);
 Route::get('/categories/{category}',[\App\Http\Controllers\CategoryController::class,'show']);
+Route::post('/categories',[\App\Http\Controllers\CategoryController::class,'store']);
+Route::put('/categories/{category}',[\App\Http\Controllers\CategoryController::class,'update']);
+Route::delete('/categories/{category}',[\App\Http\Controllers\CategoryController::class,'destroy']);
+
 
 
 
@@ -33,6 +38,7 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
     Route::put('/products/{id}',[\App\Http\Controllers\ProductController::class,'update']);
     Route::delete('/products/{id}',[\App\Http\Controllers\ProductController::class,'destroy']);
     Route::post('/logout',[\App\Http\Controllers\AuthController::class,'logout']);
+
 
 });
 
