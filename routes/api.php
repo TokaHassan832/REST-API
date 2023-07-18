@@ -22,6 +22,10 @@ Route::get('/products/{id}',[\App\Http\Controllers\ProductController::class,'sho
 Route::get('/products/search/{name}',[\App\Http\Controllers\ProductController::class,'search']);
 
 
+Route::get('/categories',[\App\Http\Controllers\CategoryController::class,'index']);
+Route::get('/categories/{category}',[\App\Http\Controllers\CategoryController::class,'show']);
+
+
 
 //protected routes
 Route::group(['middleware'=>['auth:sanctum']], function () {
