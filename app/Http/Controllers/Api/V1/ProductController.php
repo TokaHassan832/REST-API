@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -47,9 +48,9 @@ class ProductController extends Controller
      *
      * Display the specified product.
      */
-    public function show(string $id)
+    public function show(Product $product)
     {
-        return Product::find($id);
+        return new ProductResource($product);
     }
 
     /**
@@ -57,11 +58,10 @@ class ProductController extends Controller
      *
      * Update the specified product in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Product $product)
     {
-        $product= Product::find($id);
         $product->update($request->all());
-        return $product;
+        return new ProductResource($product);
     }
 
     /**
@@ -69,9 +69,10 @@ class ProductController extends Controller
      *
      * Remove the specified product from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Product $product)
     {
-        return Product::destroy($id);
+        $product->delete();
+        return response(null,Response::HTTP_NO_CONTENT);
     }
 
     /**
