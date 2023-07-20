@@ -7,10 +7,18 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+
+/**
+ * @group Products
+ *
+ * Managing Products
+ */
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get Products
+     *
+     * Display a listing of Products.
      */
     public function index()
     {
@@ -20,7 +28,9 @@ class ProductController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * POST Product
+     *
+     * Store a newly created product in storage.
      */
     public function store(Request $request)
     {
@@ -33,7 +43,9 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get Specified Product
+     *
+     * Display the specified product.
      */
     public function show(string $id)
     {
@@ -41,7 +53,9 @@ class ProductController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * PUT Product
+     *
+     * Update the specified product in storage.
      */
     public function update(Request $request, string $id)
     {
@@ -51,7 +65,9 @@ class ProductController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * DELETE Product
+     *
+     * Remove the specified product from storage.
      */
     public function destroy(string $id)
     {
@@ -59,7 +75,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Search .
+     * Search For Product
      */
     public function search(string $name)
     {

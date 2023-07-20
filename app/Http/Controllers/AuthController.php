@@ -8,8 +8,17 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 
 
+/**
+ * @group User
+ *
+ * Managing User Operations
+ */
 class AuthController extends Controller
 {
+
+    /**
+     * User Register
+     */
     public function register(Request $request){
         $fields=$request->validate([
             'name'=>'required|string',
@@ -34,6 +43,9 @@ class AuthController extends Controller
     }
 
 
+    /**
+     * User Login
+     */
     public function login(Request $request){
         $fields=$request->validate([
             'email'=>'required|string',
@@ -58,6 +70,10 @@ class AuthController extends Controller
         return response($response,201);
     }
 
+
+    /**
+     * User Logout
+     */
     public function logout(Request $request){
         auth()->user()->tokens()->delete();
         return [

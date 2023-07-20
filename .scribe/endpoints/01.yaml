@@ -1,0 +1,286 @@
+name: Products
+description: |-
+
+  Managing Products
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/products
+    metadata:
+      groupName: Products
+      groupDescription: |-
+
+        Managing Products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Products'
+      description: 'Display a listing of Products.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"category_id":1,"name":"laboriosam","description":"Quo aut voluptas ullam repellendus necessitatibus. Et est placeat non nam fugiat voluptatibus consequatur. Temporibus vel aspernatur voluptatem mollitia delectus ipsam rerum sit. Facere sint consequatur modi odit culpa.","price":"963.28","category":{"id":1,"name":"deleniti"}},{"id":2,"category_id":8,"name":"explicabo","description":"Neque nihil ex a omnis nulla hic est. Ut inventore nam non dicta modi. Illum esse modi vitae ea. Facere magni voluptatum facere aut ut.","price":"876.95","category":{"id":8,"name":"est"}},{"id":3,"category_id":10,"name":"molestiae","description":"Voluptatem nam qui ipsam et autem. Praesentium debitis reiciendis omnis quisquam recusandae aliquam. Sed tempore excepturi reiciendis id delectus.","price":"344.51","category":{"id":10,"name":"culpa"}},{"id":4,"category_id":3,"name":"doloribus","description":"Nihil quo expedita magnam rem. Minima quia aut rerum expedita laudantium fuga. Veniam itaque ut magni sunt. Distinctio iste qui sit ullam voluptatem ut ea.","price":"701.65","category":{"id":3,"name":"quis"}},{"id":5,"category_id":7,"name":"incidunt","description":"Nulla architecto molestias corporis est. Exercitationem dolorem quia qui ullam expedita sed. Ullam neque ex ab voluptatibus iste beatae. Ipsa aut quia dolorum aspernatur tenetur aliquid aut.","price":"908.48","category":{"id":7,"name":"minima"}}],"links":{"first":"http:\/\/localhost\/api\/products?page=1","last":"http:\/\/localhost\/api\/products?page=4","prev":null,"next":"http:\/\/localhost\/api\/products?page=2"},"meta":{"current_page":1,"from":1,"last_page":4,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/products?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/products?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/products?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/products?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/products?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/products","per_page":5,"to":5,"total":20}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/products/{id}'
+    metadata:
+      groupName: Products
+      groupDescription: |-
+
+        Managing Products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Specified Product'
+      description: 'Display the specified product.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"id":1,"category_id":1,"name":"laboriosam","slug":"Iure aspernatur excepturi ullam aut fugit qui velit.","description":"Quo aut voluptas ullam repellendus necessitatibus. Et est placeat non nam fugiat voluptatibus consequatur. Temporibus vel aspernatur voluptatem mollitia delectus ipsam rerum sit. Facere sint consequatur modi odit culpa.","price":96328,"created_at":"2023-07-18T19:25:52.000000Z","updated_at":"2023-07-18T19:25:52.000000Z"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/products/search/{name}'
+    metadata:
+      groupName: Products
+      groupDescription: |-
+
+        Managing Products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Search For Product'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: omnis
+        type: string
+        custom: []
+    cleanUrlParameters:
+      name: omnis
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '[]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/products
+    metadata:
+      groupName: Products
+      groupDescription: |-
+
+        Managing Products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST Product'
+      description: 'Store a newly created product in storage.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: nihil
+        type: string
+        custom: []
+      slug:
+        name: slug
+        description: ''
+        required: true
+        example: eos
+        type: string
+        custom: []
+      price:
+        name: price
+        description: ''
+        required: true
+        example: voluptatem
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: nihil
+      slug: eos
+      price: voluptatem
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/products/{id}'
+    metadata:
+      groupName: Products
+      groupDescription: |-
+
+        Managing Products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'PUT Product'
+      description: 'Update the specified product in storage.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/products/{id}'
+    metadata:
+      groupName: Products
+      groupDescription: |-
+
+        Managing Products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'DELETE Product'
+      description: 'Remove the specified product from storage.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

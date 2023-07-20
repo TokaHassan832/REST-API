@@ -1,0 +1,668 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/categories:
+    get:
+      summary: 'Get Categories'
+      operationId: getCategories
+      description: 'Display a listing of Categories.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Which page to show.'
+          example: 12
+          required: false
+          schema:
+            type: integer
+            description: 'Which page to show.'
+            example: 12
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: deleniti
+                    -
+                      id: 2
+                      name: ipsum
+                    -
+                      id: 3
+                      name: quis
+                    -
+                      id: 4
+                      name: ullam
+                    -
+                      id: 5
+                      name: quas
+                    -
+                      id: 6
+                      name: fugiat
+                    -
+                      id: 7
+                      name: minima
+                    -
+                      id: 8
+                      name: est
+                    -
+                      id: 9
+                      name: quo
+                    -
+                      id: 10
+                      name: culpa
+                    -
+                      id: 11
+                      name: 'new category'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: deleniti
+                      -
+                        id: 2
+                        name: ipsum
+                      -
+                        id: 3
+                        name: quis
+                      -
+                        id: 4
+                        name: ullam
+                      -
+                        id: 5
+                        name: quas
+                      -
+                        id: 6
+                        name: fugiat
+                      -
+                        id: 7
+                        name: minima
+                      -
+                        id: 8
+                        name: est
+                      -
+                        id: 9
+                        name: quo
+                      -
+                        id: 10
+                        name: culpa
+                      -
+                        id: 11
+                        name: 'new category'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: deleniti
+      tags:
+        - Categories
+      security: []
+    post:
+      summary: 'POST Category'
+      operationId: pOSTCategory
+      description: 'Store a newly created category in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the category.'
+                  example: '"Clothing"'
+              required:
+                - name
+      security: []
+  '/api/categories/{category_id}':
+    get:
+      summary: 'Get Specified Category'
+      operationId: getSpecifiedCategory
+      description: 'Display the specified category.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: deleniti
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: deleniti
+      tags:
+        - Categories
+      security: []
+    put:
+      summary: 'PUT Category'
+      operationId: pUTCategory
+      description: 'Update the specified category in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      security: []
+    delete:
+      summary: 'DELETE Category'
+      operationId: dELETECategory
+      description: 'Remove the specified category from storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      security: []
+    parameters:
+      -
+        in: path
+        name: category_id
+        description: 'The ID of the category.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/products:
+    get:
+      summary: 'Get Products'
+      operationId: getProducts
+      description: 'Display a listing of Products.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      category_id: 1
+                      name: laboriosam
+                      description: 'Quo aut voluptas ullam repellendus necessitatibus. Et est placeat non nam fugiat voluptatibus consequatur. Temporibus vel aspernatur voluptatem mollitia delectus ipsam rerum sit. Facere sint consequatur modi odit culpa.'
+                      price: '963.28'
+                      category:
+                        id: 1
+                        name: deleniti
+                    -
+                      id: 2
+                      category_id: 8
+                      name: explicabo
+                      description: 'Neque nihil ex a omnis nulla hic est. Ut inventore nam non dicta modi. Illum esse modi vitae ea. Facere magni voluptatum facere aut ut.'
+                      price: '876.95'
+                      category:
+                        id: 8
+                        name: est
+                    -
+                      id: 3
+                      category_id: 10
+                      name: molestiae
+                      description: 'Voluptatem nam qui ipsam et autem. Praesentium debitis reiciendis omnis quisquam recusandae aliquam. Sed tempore excepturi reiciendis id delectus.'
+                      price: '344.51'
+                      category:
+                        id: 10
+                        name: culpa
+                    -
+                      id: 4
+                      category_id: 3
+                      name: doloribus
+                      description: 'Nihil quo expedita magnam rem. Minima quia aut rerum expedita laudantium fuga. Veniam itaque ut magni sunt. Distinctio iste qui sit ullam voluptatem ut ea.'
+                      price: '701.65'
+                      category:
+                        id: 3
+                        name: quis
+                    -
+                      id: 5
+                      category_id: 7
+                      name: incidunt
+                      description: 'Nulla architecto molestias corporis est. Exercitationem dolorem quia qui ullam expedita sed. Ullam neque ex ab voluptatibus iste beatae. Ipsa aut quia dolorum aspernatur tenetur aliquid aut.'
+                      price: '908.48'
+                      category:
+                        id: 7
+                        name: minima
+                  links:
+                    first: 'http://localhost/api/products?page=1'
+                    last: 'http://localhost/api/products?page=4'
+                    prev: null
+                    next: 'http://localhost/api/products?page=2'
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 4
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/products?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost/api/products?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost/api/products?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://localhost/api/products?page=4'
+                        label: '4'
+                        active: false
+                      -
+                        url: 'http://localhost/api/products?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/products'
+                    per_page: 5
+                    to: 5
+                    total: 20
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        category_id: 1
+                        name: laboriosam
+                        description: 'Quo aut voluptas ullam repellendus necessitatibus. Et est placeat non nam fugiat voluptatibus consequatur. Temporibus vel aspernatur voluptatem mollitia delectus ipsam rerum sit. Facere sint consequatur modi odit culpa.'
+                        price: '963.28'
+                        category:
+                          id: 1
+                          name: deleniti
+                      -
+                        id: 2
+                        category_id: 8
+                        name: explicabo
+                        description: 'Neque nihil ex a omnis nulla hic est. Ut inventore nam non dicta modi. Illum esse modi vitae ea. Facere magni voluptatum facere aut ut.'
+                        price: '876.95'
+                        category:
+                          id: 8
+                          name: est
+                      -
+                        id: 3
+                        category_id: 10
+                        name: molestiae
+                        description: 'Voluptatem nam qui ipsam et autem. Praesentium debitis reiciendis omnis quisquam recusandae aliquam. Sed tempore excepturi reiciendis id delectus.'
+                        price: '344.51'
+                        category:
+                          id: 10
+                          name: culpa
+                      -
+                        id: 4
+                        category_id: 3
+                        name: doloribus
+                        description: 'Nihil quo expedita magnam rem. Minima quia aut rerum expedita laudantium fuga. Veniam itaque ut magni sunt. Distinctio iste qui sit ullam voluptatem ut ea.'
+                        price: '701.65'
+                        category:
+                          id: 3
+                          name: quis
+                      -
+                        id: 5
+                        category_id: 7
+                        name: incidunt
+                        description: 'Nulla architecto molestias corporis est. Exercitationem dolorem quia qui ullam expedita sed. Ullam neque ex ab voluptatibus iste beatae. Ipsa aut quia dolorum aspernatur tenetur aliquid aut.'
+                        price: '908.48'
+                        category:
+                          id: 7
+                          name: minima
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        category_id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: laboriosam
+                        description:
+                          type: string
+                          example: 'Quo aut voluptas ullam repellendus necessitatibus. Et est placeat non nam fugiat voluptatibus consequatur. Temporibus vel aspernatur voluptatem mollitia delectus ipsam rerum sit. Facere sint consequatur modi odit culpa.'
+                        price:
+                          type: string
+                          example: '963.28'
+                        category:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: deleniti
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/products?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/products?page=4'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: 'http://localhost/api/products?page=2'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 4
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/products?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost/api/products?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost/api/products?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://localhost/api/products?page=4'
+                            label: '4'
+                            active: false
+                          -
+                            url: 'http://localhost/api/products?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/products'
+                      per_page:
+                        type: integer
+                        example: 5
+                      to:
+                        type: integer
+                        example: 5
+                      total:
+                        type: integer
+                        example: 20
+      tags:
+        - Products
+      security: []
+    post:
+      summary: 'POST Product'
+      operationId: pOSTProduct
+      description: 'Store a newly created product in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: nihil
+                slug:
+                  type: string
+                  description: ''
+                  example: eos
+                price:
+                  type: string
+                  description: ''
+                  example: voluptatem
+              required:
+                - name
+                - slug
+                - price
+      security: []
+  '/api/products/{id}':
+    get:
+      summary: 'Get Specified Product'
+      operationId: getSpecifiedProduct
+      description: 'Display the specified product.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  category_id: 1
+                  name: laboriosam
+                  slug: 'Iure aspernatur excepturi ullam aut fugit qui velit.'
+                  description: 'Quo aut voluptas ullam repellendus necessitatibus. Et est placeat non nam fugiat voluptatibus consequatur. Temporibus vel aspernatur voluptatem mollitia delectus ipsam rerum sit. Facere sint consequatur modi odit culpa.'
+                  price: 96328
+                  created_at: '2023-07-18T19:25:52.000000Z'
+                  updated_at: '2023-07-18T19:25:52.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  category_id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: laboriosam
+                  slug:
+                    type: string
+                    example: 'Iure aspernatur excepturi ullam aut fugit qui velit.'
+                  description:
+                    type: string
+                    example: 'Quo aut voluptas ullam repellendus necessitatibus. Et est placeat non nam fugiat voluptatibus consequatur. Temporibus vel aspernatur voluptatem mollitia delectus ipsam rerum sit. Facere sint consequatur modi odit culpa.'
+                  price:
+                    type: integer
+                    example: 96328
+                  created_at:
+                    type: string
+                    example: '2023-07-18T19:25:52.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2023-07-18T19:25:52.000000Z'
+      tags:
+        - Products
+      security: []
+    put:
+      summary: 'PUT Product'
+      operationId: pUTProduct
+      description: 'Update the specified product in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Products
+      security: []
+    delete:
+      summary: 'DELETE Product'
+      operationId: dELETEProduct
+      description: 'Remove the specified product from storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Products
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the product.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/products/search/{name}':
+    get:
+      summary: 'Search For Product'
+      operationId: searchForProduct
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example: []
+      tags:
+        - Products
+      security: []
+    parameters:
+      -
+        in: path
+        name: name
+        description: ''
+        example: omnis
+        required: true
+        schema:
+          type: string
+  /api/register:
+    post:
+      summary: 'User Register'
+      operationId: userRegister
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: est
+                email:
+                  type: string
+                  description: ''
+                  example: jocelyn.weimann@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: 'F!<l[>;#A2-3pP'
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/login:
+    post:
+      summary: 'User Login'
+      operationId: userLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: kbrakus@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: rYm/q3F/
+              required:
+                - email
+                - password
+      security: []
+  /api/logout:
+    post:
+      summary: 'User Logout'
+      operationId: userLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - User
+      security: []
+tags:
+  -
+    name: Categories
+    description: "\nManaging Categories"
+  -
+    name: Products
+    description: "\nManaging Products"
+  -
+    name: User
+    description: "\nManaging User Operations"
