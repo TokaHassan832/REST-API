@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V2;
 
+use App\Http\Controllers\Controller;
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use function response;
 
 
 /**
@@ -24,7 +26,7 @@ class CategoryController extends Controller
      * @queryParam page Which page to show. Example:12
      */
     public function index(){
-        $categories= Category::all();
+        $categories= Category::where('id','<',3)->with('products')->get();
         return CategoryResource::collection($categories);
     }
 
